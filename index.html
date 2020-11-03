@@ -1,195 +1,57 @@
-
 <div style="text-align:center">
-<!DOCTYPE html>
+  <!DOCTYPE html>
 
-<html>
+  <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Ascent Decor</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDbj6COiiHLZ_S1a90ukf05tfg0ARLNkBk"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prime Video</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+  </head>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-6 col-xs-12">
-        <img src="./assets/images/fur.jpg" height="80%" width="100%" alt="furniture">
-      </div>
-      <div class="col-sm-6 col-md-6 col-xs-12 headingOne">
-        <h1>Values</h1>
-      </div>
-    </div>
-    <div class="row" style="margin-bottom:15%;">
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <img src="./assets/images/triangle.png"  height="60%" width="80%" alt="triangle">
-        <hr style="height:2px;width:25%;color:#d19629;background-color:#d19629; margin-left:30%">
-        <div class="headingOne"><h2> Our Mission </h2></div>
-        <div class="sectionOne">
-          To create beautiful fabrics that inspire and empower people across the globe, to create aesthetical interior spaces hat invoke delightful experiences.
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <img src="./assets/images/triangle.png"  height="60%" width="80%" alt="triangle">
-        <hr style="height:2px;width:25%;color:#d19629;background-color:#d19629; margin-left:30%">
-        <div class="headingOne"><h3 style="font-size:4rem;"> Ascent<br>Decor </h3></div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-xs-12">
-        <img src="./assets/images/triangle.png"  height="60%" width="80%" alt="triangle">
-        <hr style="height:2px;width:25%;color:#d19629;background-color:#d19629; margin-left:30%">
-        <div class="headingOne"><h2> Our Mission </h2></div>
-        <div class="sectionOne">
-          To create beautiful fabrics that inspire and empower people across the globe, to create aesthetical interior spaces hat invoke delightful experiences.
+  <body onload="myFunction()">
+    <div class="container">
+      <script>
+        function myFunction() {
+          var queryString = window.location.search;
+          var urlParams = new URLSearchParams(queryString);
+          var myParam1 = urlParams.get('dark');
+          var element = document.body;
+          if (myParam1 == "true") {
+            element.classList.add("dark-mode");
+          } else {
+            element.classList.remove("dark-mode");
+          }
+        }
+      </script>
+
+      <div id="demo2"></div>
+
+      <div class="videoList">
+        <div class="videoAndAdd">
+          <script>
+            var y = "",
+              i, ad = "";
+            var ad = [
+              "<div class = 'square'><div class= 'logo'><img width = '15%' src='./assets/images/prime.png' alt='Prime Logo'></div><div class = 'adText'><p>Amazon Prime Video <br> Amazon Prime LLC</p></div> <div class = 'playButton'> <img src= './assets/images/open-small.png' alt = 'Play Button'></div></div>",
+              "<div class = 'square'><div class= 'logo'><img width = '15%' src='./assets/images/hotstar.jpg' alt='hotstar Logo'></div><div class = 'adText'><p>Hotstar<br>Novi Digital</p></div> <div class = 'playButton'> <img src= './assets/images/open-small.png' alt = 'Play Button'></div></div>"
+            ]
+            for (i = 1; i < URL.length; i++) {
+              j = i % ad.length;
+              y = y + "<div class = 'videoAndAdd'><iframe width='560' height='315' src='" + URL[i] +
+                "' + loading='lazy' frameborder='0'  allow='autoplay; encrypted-media' > </iframe>" + ad[j] + "</div>"
+            }
+            document.getElementById("demo2").innerHTML = y;
+          </script>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-xs-12 no-padding">
-        <img src="./assets/images/meeting-room.jpg"  height="100%" width="100%" alt="triangle">
-      </div>
-      <div class="col-lg-6 col-md-6 col-xs-12 no-padding">
-        <div class="sectionMiddle">
-        </div>
-        <div class="sectionTwo">
+    <script src="index.js"></script>
+  </body>
 
-<section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper">
-        <h3> Design Studio One</h3>
-        <div class="caraOne">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Sem integer vitae justo eget magna. Dictum non consectetur a erat nam at lectus urna. Eget mauris pharetra et ultrices neque ornare. Quisque non tellus orci ac auctor augue. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Elementum sagittis vitae et leo duis ut diam quam nulla. Sed risus pretium quam vulputate. Morbi tristique senectus et netus et malesuada fames ac. Justo donec enim diam vulputate. Tristique senectus et netus et malesuada. Elit pellentesque habitant morbi tristique senectus et.
-
-Donec enim diam vulputate ut. Augue interdum velit euismod in pellentesque massa. Scelerisque purus semper eget duis at tellus at urna. Nascetur ridiculus mus mauris vitae ultricies. Mauris rhoncus aenean vel elit scelerisque. Et magnis dis parturient montes nascetur ridiculus mus mauris. In iaculis nunc sed augue. Quis risus sed vulputate odio ut. Aliquam sem fringilla ut morbi. Auctor eu augue ut lectus arcu bibendum at varius. Lorem ipsum dolor sit amet consectetur adipiscing elit duis.
-        </div>
-        <a href="#carousel__slide4"
-           class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2"
-           class="carousel__next">Go to next slide</a>
-      </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper">
-        <h3> Design Studio Two </h3>
-        <div class="caraTwo">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Sem integer vitae justo eget magna. Dictum non consectetur a erat nam at lectus urna. Eget mauris pharetra et ultrices neque ornare. Quisque non tellus orci ac auctor augue. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Elementum sagittis vitae et leo duis ut diam quam nulla. Sed risus pretium quam vulputate. Morbi tristique senectus et netus et malesuada fames ac. Justo donec enim diam vulputate. Tristique senectus et netus et malesuada. Elit pellentesque habitant morbi tristique senectus et.
-
-Donec enim diam vulputate ut. Augue interdum velit euismod in pellentesque massa. Scelerisque purus semper eget duis at tellus at urna. Nascetur ridiculus mus mauris vitae ultricies. Mauris rhoncus aenean vel elit scelerisque. Et magnis dis parturient montes nascetur ridiculus mus mauris. In iaculis nunc sed augue. Quis risus sed vulputate odio ut. Aliquam sem fringilla ut morbi. Auctor eu augue ut lectus arcu bibendum at varius. Lorem ipsum dolor sit amet consectetur adipiscing elit duis.
-        </div>
-      </div>
-      <a href="#carousel__slide1"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide3"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper">
-        <h3> Design Studio Three </h3>
-        <div class="caraThree">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Sem integer vitae justo eget magna. Dictum non consectetur a erat nam at lectus urna. Eget mauris pharetra et ultrices neque ornare. Quisque non tellus orci ac auctor augue. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Elementum sagittis vitae et leo duis ut diam quam nulla. Sed risus pretium quam vulputate. Morbi tristique senectus et netus et malesuada fames ac. Justo donec enim diam vulputate. Tristique senectus et netus et malesuada. Elit pellentesque habitant morbi tristique senectus et.
-
-Donec enim diam vulputate ut. Augue interdum velit euismod in pellentesque massa. Scelerisque purus semper eget duis at tellus at urna. Nascetur ridiculus mus mauris vitae ultricies. Mauris rhoncus aenean vel elit scelerisque. Et magnis dis parturient montes nascetur ridiculus mus mauris. In iaculis nunc sed augue. Quis risus sed vulputate odio ut. Aliquam sem fringilla ut morbi. Auctor eu augue ut lectus arcu bibendum at varius. Lorem ipsum dolor sit amet consectetur adipiscing elit duis.
-        </div>
-      </div>
-      <a href="#carousel__slide2"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide4"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper">
-        <h3> Design Studio Four </h3>
-        <div class="caraFour">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Sem integer vitae justo eget magna. Dictum non consectetur a erat nam at lectus urna. Eget mauris pharetra et ultrices neque ornare. Quisque non tellus orci ac auctor augue. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Elementum sagittis vitae et leo duis ut diam quam nulla. Sed risus pretium quam vulputate. Morbi tristique senectus et netus et malesuada fames ac. Justo donec enim diam vulputate. Tristique senectus et netus et malesuada. Elit pellentesque habitant morbi tristique senectus et.
-
-Donec enim diam vulputate ut. Augue interdum velit euismod in pellentesque massa. Scelerisque purus semper eget duis at tellus at urna. Nascetur ridiculus mus mauris vitae ultricies. Mauris rhoncus aenean vel elit scelerisque. Et magnis dis parturient montes nascetur ridiculus mus mauris. In iaculis nunc sed augue. Quis risus sed vulputate odio ut. Aliquam sem fringilla ut morbi. Auctor eu augue ut lectus arcu bibendum at varius. Lorem ipsum dolor sit amet consectetur adipiscing elit duis.
-        </div>
-      </div>
-      <a href="#carousel__slide3"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide1"
-         class="carousel__next">Go to first slide</a>
-    </li>
-  </ol>
-  <aside class="carousel__navigation">
-    <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide1"
-           class="carousel__navigation-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide2"
-           class="carousel__navigation-button">Go to slide 2</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide3"
-           class="carousel__navigation-button">Go to slide 3</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide4"
-           class="carousel__navigation-button">Go to slide 4</a>
-      </li>
-    </ol>
-  </aside>
-</section>
-        </div>
-
-      </div>
-    </div>
-    <div class="sectionThree">
-          <div class="row">
-            <div class="col-lg-12 col-md-12  col-xs-12 sectionBlog">
-              <div class="container">
-  <img src="./assets/images/meeting-room.jpg" alt="meeting-room" style="width:100%; z-index:-1;">
-  <div class="bottomLeft">The reckoning force in the world of <br>furnishing fabrics.</div>
-</div>
-            </div>
-          </div>
-        </div>
-        <div class="mapSection">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-xs-12">
-              <h1>Map Section</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<!-- <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
--->
-            </div>
-          </div>
-        </div>
-        <div #map style="width:100%;height:400px"></div>
-
-  </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDbj6COiiHLZ_S1a90ukf05tfg0ARLNkBk"></script>
-</body>
-
-</html>
-<router-outlet></router-outlet>
+  </html>
+  <router-outlet></router-outlet>
