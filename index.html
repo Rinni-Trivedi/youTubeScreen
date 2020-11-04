@@ -44,7 +44,7 @@
             for (i = 1; i < URL.length; i++) {
               j = i % ad.length;
               y = y + "<div class = 'videoAndAdd'><iframe style='width: -webkit-fill-available' width='560' height='315' src='" + URL[i] +
-                "' + class='lazy' frameborder='0'  allow='autoplay; encrypted-media' > </iframe>" + ad[j] + "</div>"
+                "' + class='lazy' loading='lazy' frameborder='0'  allow='autoplay; encrypted-media' > </iframe>" + ad[j] + "</div>"
             }
             document.getElementById("demo2").innerHTML = y;
           </script>
