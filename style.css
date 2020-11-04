@@ -30,17 +30,23 @@ body {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
 }
+iframe {
+     border: 1px solid transparent;
+    border-top-left-radius: 5% 10%;
+    border-top-right-radius: 5% 10%;
+    border-collapse: separate; 
+}
 .container {
     margin: 5%;
 }
 .square {
-   margin-left: 2%;
      display: flex;
      align-items: center;
      background-color: white;
      border: 1px solid transparent;
-     border-bottom-right-radius: 30%;
-     border-bottom-left-radius: 30%
+     border-collapse: separate; 
+     border-bottom-right-radius: 5% 30%;
+     border-bottom-left-radius: 5% 30%
 }
 .adText {
    flex: 1;
@@ -49,6 +55,6 @@ body {
     flex: 1;
 }
 .videoAndAdd {
-   border: 1px solid transparent;
+   margin: 15px 0px;
 }
 

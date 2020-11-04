@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="index.js"></script>
+    <script src="lazysizes.min.js" async></script>
   </head>
 
   <body onload="myFunction()">
@@ -42,15 +43,18 @@
             ]
             for (i = 1; i < URL.length; i++) {
               j = i % ad.length;
-              y = y + "<div class = 'videoAndAdd'><iframe width='560' height='315' src='" + URL[i] +
-                "' + loading='lazy' frameborder='0'  allow='autoplay; encrypted-media' > </iframe>" + ad[j] + "</div>"
+              y = y + "<div class = 'videoAndAdd'><iframe style='width: -webkit-fill-available' width='560' height='315' src='" + URL[i] +
+                "' + class='lazy' frameborder='0'  allow='autoplay; encrypted-media' > </iframe>" + ad[j] + "</div>"
             }
             document.getElementById("demo2").innerHTML = y;
           </script>
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
+    <script type="text/javascript" src="../dist/ay-lazy-loader.js"></script>
+    <script type="text/javascript">
+    var lazyLoader = new AyLazyLoader();
+</script>
   </body>
 
   </html>

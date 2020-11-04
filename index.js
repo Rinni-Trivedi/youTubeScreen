@@ -1,3 +1,29 @@
+document.addEventListener("DOMContentLoaded", function () {
+    if ("IntersectionObserver" in window) {
+        lazyVids = document.querySelectorAll("iframe");
+        var vidObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && entry.target.src.length == 0) {                    
+                    entry.target.src = entry.target.dataset.src;
+                    vidObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        lazyVids.forEach(function (vid) {
+            vidObserver.observe(vid);
+        });
+    // if the IntersectionObserver is not available just load all.. sorry
+    } else {
+        var lazyVids = document.getElementsByTagName('iframe');
+
+        for (var i = 0; i < lazyVids.length; i++) {
+            if (lazyVids[i].getAttribute('data-src')) {
+                lazyVids[i].setAttribute('src', lazyVids[i].getAttribute('data-src'));
+            }
+        }
+    }
+})
 var VideoIds = {
     videoIds: [
         "lR7XZH-8U_A",
